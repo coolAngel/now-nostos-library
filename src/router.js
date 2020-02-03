@@ -22,6 +22,14 @@ export default new Router({
           ]
         }
       ]
+    },
+    {
+      path: "/auth",
+      component: () => import(/* webpackChunkName: "adminBooks" */ './views/auth/index.vue'),
+      children: [
+        { path: "sign_up", component: () => import(/* webpackChunkName: "auth" */ './views/auth/SignUp.vue') },
+        { path: "sign_in", component: () => import(/* webpackChunkName: "auth" */ './views/auth/SignIn.vue') }
+      ]
     }
   ]
 })

@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+
+    <button @click="signUp" class="sign-btn">Εγγραφή</button>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -35,6 +37,9 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+    signUp() { this.$router.push("/auth/sign_up") }
   }
 }
 </script>
@@ -54,5 +59,11 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.sign-btn {
+  background: purple;
+  color: white;
+  padding: 16px;
 }
 </style>
